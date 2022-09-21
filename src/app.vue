@@ -3,16 +3,18 @@
         <header class="header">
             <h1 class="header__title">My ToDo list</h1>
         </header>
-        <div class="main">
-            <div class="todo-list__field">
-                <input type="text" name="taskText" id="task-text" class="todo-list__input">
-                <button class="button todo-list__add-batton" type="button">Add</button>
-            </div>
-            <div class="todo-list">
-                <div class="todo-list__task-list"> 
+        <main class="main">
+            <div class="todo">
+                <div class="todo-list__field">
+                    <input type="text" name="taskText" id="task-text" class="todo-list__input">
+                    <button class="button todo-list__add-batton" type="button">Add</button>
                 </div>
-            </div> 
-        </div>
+                <div class="todo-list">
+                    <div class="todo-list__task-list"> 
+                    </div>
+                </div> 
+            </div>
+        </main>
     </div>
 </template>
 <script>
@@ -45,28 +47,33 @@ import { shallowReactive } from 'vue';
     }
 
     .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 440px;
         background-color: rgb(246, 176, 46);
-        padding-top: 90px;
-        padding-left: 200px;
-        padding-right: 200px;
+    }
+
+    .todo {
+        max-width: 550px;
     }
 
     .todo-list {
         overflow-y: scroll;
+        width: 100%;
         max-height: 200px;
         min-height: 200px;
         border: 1px solid rgb(21, 20, 22);
         padding: 5px;
         border-radius: 3px;
         background-color: rgb(253, 225, 123);
-        padding: 10px;
         box-shadow: 0px 0px 40px -4px rgb(0, 0, 0);
     }
 
     .todo-list__field {
         display: flex;
         justify-content: space-between;
+        width: 100%;
         margin-bottom: 5px;
         padding: 5px;
         background-color: rgb(253, 225, 123);
